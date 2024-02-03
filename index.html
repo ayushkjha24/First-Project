@@ -1,13 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>1st project</title>
+
+    <link rel="stylesheet" href="css/navbar.css">
+    <style>
+        #preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            /* Set background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .preloader-spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Hello everyone</h1>
-  <script src="./js/index.js"></script>
+    <div id="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+
+    <div class="navbar">
+        <div class="logo"><img src="img/logo2.png" alt="" srcset=""></div>
+        <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#sports">Sports</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#coordinators">Coordinators</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+
+
+    <!-- BAKI KA CONTENT YAHA DALO  aur content me navbar ke size ka margin de dena top se -->
+
+
+
+
+
+
+
+
+
+    <div class="footer">
+        <div class="dabba">
+            <h2>Important Links</h2>
+            <div class="links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </div>
+        </div>
+
+        <div class="dabba">
+            <h2>Contacts</h2>
+            <div class="links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </div>
+        </div>
+
+        <div class="dabba">
+            <h2>Social Links</h2>
+            <div class="links social">
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/navbar.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var preloader = document.getElementById("preloader");
+            preloader.style.display = "none";
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+
+    mobileMenu.addEventListener('click', function () {
+        navList.classList.toggle('show');
+        toggleBars();
+    });
+
+    function toggleBars() {
+        const bars = document.querySelectorAll('.menu-toggle span');
+
+        bars.forEach(bar => {
+            bar.classList.toggle('cross');
+        });
+    }
+});
+
+    </script>
 </body>
+
 </html>
